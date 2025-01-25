@@ -295,17 +295,14 @@ public class LinkedList {
 	 * A textual representation of this list, for debugging.
 	 */
 	public String toString() {
-		Node current=first;
-        String print="Memory Block List: [ ";
-        while(current!=null){
-            print+=""+current.block;
-            current=current.next;
-            if(current!=null){
-                print+=" , "; // punctuation
-            }
-        }
-        print+=" ]";
-        return print;
-    }
-
+		//// Replace the following statement with your code
+// and builds the string incrementally
+	ListIterator itr = this.iterator();
+	String str = "";
+	while (itr.hasNext()) {
+	str += "(" + itr.current.block.baseAddress + " , " + itr.current.block.length + ") ";
+	itr.next();
+	}
+	return str;
+	}
 }
